@@ -15,6 +15,14 @@ namespace Opgave01
         public Form1()
         {
             InitializeComponent();
+            string path = @"Images\google.png";
+            pictureBox1.Image = new Bitmap(Image.FromFile(path));
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
