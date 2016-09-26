@@ -1,0 +1,7 @@
+job1:
+   tags:
+      - CSharp
+   script:
+      - "CSharpOOTest"
+   only:
+      - master
