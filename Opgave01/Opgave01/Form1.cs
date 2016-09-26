@@ -22,17 +22,16 @@ namespace Opgave01
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            blend();
+            button1.Enabled = false;
+            button2.Enabled = false;
+            trackBar1.Enabled = false;
+            blend(false);
 
         }
-        private void blend()
+        private void blend(bool xnor)
         {
             var image1 = new Bitmap(pictureBox1.Image);
             var image2 = new Bitmap(pictureBox2.Image);
@@ -50,10 +49,23 @@ namespace Opgave01
                 {
                     var pixel1 = image1.GetPixel(width, height);
                     var pixel2 = image2.GetPixel(width, height);
+                    int red = 0;
+                    int green = 0;
+                    int blue = 0;
+                    if (xnor)
+                    {
+                        red = formulaXnor(pixel1.R, pixel2.R);
+                        green = formulaXnor(pixel1.B, pixel2.G);
+                        blue = formulaXnor(pixel1.B, pixel2.B);
 
-                    int red = formulaBlend(pixel1.R, pixel2.R, betha);
-                    int green = formulaBlend(pixel1.B, pixel2.G, betha);
-                    int blue = formulaBlend(pixel1.B, pixel2.B, betha);
+                    }
+                    else
+                    {
+                        red = formulaBlend(pixel1.R, pixel2.R, betha);
+                        green = formulaBlend(pixel1.B, pixel2.G, betha);
+                        blue = formulaBlend(pixel1.B, pixel2.B, betha);
+
+                    }
 
                     Color newColor = Color.FromArgb(red, green, blue);
 
@@ -63,10 +75,18 @@ namespace Opgave01
             }
 
             pictureBox3.Image = image3;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            trackBar1.Enabled = true;
 
 
 
 
+        }
+
+        private int formulaXnor(byte rbg1, byte rbg2)
+        {
+            return (byte)~(rbg1 ^ rbg2);
         }
 
         private int formulaBlend(int rbg1, int rbg2 , byte betha)
@@ -98,6 +118,14 @@ namespace Opgave01
             {
                 return height2;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            trackBar1.Enabled = false;
+            blend(true);
         }
     }
 }
