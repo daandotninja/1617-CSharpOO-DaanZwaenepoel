@@ -18,13 +18,43 @@ namespace Opgave02
 
         public void AddNode(string name,List<string> neighbours)
         {
-            TerrainGraph.Add(name, neighbours);
-            
+            if (TerrainGraph.ContainsKey(name))
+            {
+                TerrainGraph.Remove(name);
+                TerrainGraph.Add(name, neighbours);
+            }
+            else
+            {
+                foreach (var neighbour in neighbours)
+                {
+                    if (TerrainGraph.ContainsKey(neighbour))
+                    {
+                        TerrainGraph.Remove(neighbour);
+                        TerrainGraph.Add(neighbour, new List<string>() { name });
+                    }
+                    else
+                    {
+                        TerrainGraph.Add(neighbour, new List<string>() { name });
+                    }
+
+                }
+                TerrainGraph.Add(name, neighbours);
+
+                
+
+            }
+           
+       
         }
 
         public List<List<string>> SearchAllPaths(string start,string destinatioin) {
-             
-            return null ;
+            var pathList = new List<List<string>>();
+            if (start == destinatioin)
+            {
+                pathList.Add(new List<string>(){ start});
+            }
+           
+            return pathList ;
 
         }
     }
