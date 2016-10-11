@@ -49,11 +49,20 @@ namespace Opgave02
 
         public List<List<string>> SearchAllPaths(string start,string destinatioin) {
             var pathList = new List<List<string>>();
+            var paths = new List<string>();
             if (start == destinatioin)
             {
                 pathList.Add(new List<string>(){ start});
             }
-           
+            foreach (var neighbour in TerrainGraph[start])
+            {
+               if(neighbour == destinatioin)
+                {
+                    pathList.Add(new List<string>() { start , destinatioin });
+                }
+
+            }
+
             return pathList ;
 
         }
