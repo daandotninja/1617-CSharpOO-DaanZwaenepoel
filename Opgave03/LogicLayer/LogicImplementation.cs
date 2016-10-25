@@ -69,6 +69,7 @@ namespace LogicLayer
                 }
                 else
                 {
+                     
                     dataAccessLayer.StoreRunInfo(date, info);
                 }
             }
