@@ -15,12 +15,16 @@ namespace DataAccessLayer
         public Dictionary<DateTime,RunInfo> storeInfo = new Dictionary<DateTime,RunInfo>();
         public DataAccessImplementation()
         {
-            string json = File.ReadAllText(filename);
-            Dictionary<DateTime, RunInfo> files = JsonConvert.DeserializeObject<Dictionary<DateTime, RunInfo>>(json);
-            foreach (var f in files)
+            if (File.Exists(filename))
             {
-                StoreRunInfo(f.Key, f.Value);
+                string json = File.ReadAllText(filename);
+                Dictionary<DateTime, RunInfo> files = JsonConvert.DeserializeObject<Dictionary<DateTime, RunInfo>>(json);
+                foreach (var f in files)
+                {
+                    StoreRunInfo(f.Key, f.Value);
+                }
             }
+      
 
         }
         public void StoreRunInfo(DateTime date , RunInfo info)
