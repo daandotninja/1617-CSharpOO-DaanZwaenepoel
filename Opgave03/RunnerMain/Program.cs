@@ -19,7 +19,6 @@ namespace RunnerMain
         {
             IDataAccess dataAccessLayer = new DataAccessImplementation();
             ILogic logicLayer = new LogicImplementation(dataAccessLayer);
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm(logicLayer));
