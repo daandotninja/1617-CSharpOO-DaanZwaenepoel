@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicLayer", "LogicLayer\LogicLayer.csproj", "{DB5FB644-E5DD-4C44-ACAA-FDDE5C67DE31}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunnerMain", "RunnerMain\RunnerMain.csproj", "{2E47ACA1-235A-4ABF-B84F-32B2884786E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DB5FB644-E5DD-4C44-ACAA-FDDE5C67DE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB5FB644-E5DD-4C44-ACAA-FDDE5C67DE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB5FB644-E5DD-4C44-ACAA-FDDE5C67DE31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E47ACA1-235A-4ABF-B84F-32B2884786E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E47ACA1-235A-4ABF-B84F-32B2884786E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E47ACA1-235A-4ABF-B84F-32B2884786E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E47ACA1-235A-4ABF-B84F-32B2884786E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

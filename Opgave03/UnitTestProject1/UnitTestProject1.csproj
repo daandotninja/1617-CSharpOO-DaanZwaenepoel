@@ -54,6 +54,7 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="UnitTest2.cs" />
     <Compile Include="UnitTest3.cs" />
+    <Compile Include="UnitTest4.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -70,6 +71,10 @@
     <ProjectReference Include="..\LogicLayer\LogicLayer.csproj">
       <Project>{db5fb644-e5dd-4c44-acaa-fdde5c67de31}</Project>
       <Name>LogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RunnerMain\RunnerMain.csproj">
+      <Project>{2e47aca1-235a-4abf-b84f-32b2884786e8}</Project>
+      <Name>RunnerMain</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
