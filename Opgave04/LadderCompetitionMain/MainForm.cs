@@ -160,6 +160,7 @@ namespace LadderCompetitionMain
             this.registerButton.Text = "Register Match ";
             this.registerButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // newMatchGroupBox
             // 
@@ -190,6 +191,7 @@ namespace LadderCompetitionMain
             this.Controls.Add(this.newMatchGroupBox);
             this.Controls.Add(this.rankingTextBox);
             this.Name = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.newMatchGroupBox.ResumeLayout(false);
             this.newMatchGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -203,6 +205,11 @@ namespace LadderCompetitionMain
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
