@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Globals;
+using LogicLayer;
 
 namespace ShaCollisionsGUIMain
 {
@@ -16,7 +18,8 @@ namespace ShaCollisionsGUIMain
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            ILogic mainLogic = new LogicImplementation();
+            Application.Run(new MainForm(mainLogic));
         }
     }
 }

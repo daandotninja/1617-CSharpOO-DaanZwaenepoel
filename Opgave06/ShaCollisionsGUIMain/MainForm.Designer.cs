@@ -1,4 +1,6 @@
-﻿namespace ShaCollisionsGUIMain
+﻿using LogicLayer;
+
+namespace ShaCollisionsGUIMain
 {
     partial class MainForm
     {
@@ -28,55 +30,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.pass = new System.Windows.Forms.TextBox();
+            this.hash = new System.Windows.Forms.TextBox();
+            this.collision = new System.Windows.Forms.TextBox();
+            this.length = new System.Windows.Forms.TextBox();
+            this.count = new System.Windows.Forms.TextBox();
             this.Password = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.calculate = new System.Windows.Forms.Button();
+            this.searchCollisions = new System.Windows.Forms.Button();
+            this.abort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // pass
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 88);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(590, 20);
-            this.textBox1.TabIndex = 0;
+            this.pass.Location = new System.Drawing.Point(108, 88);
+            this.pass.Name = "pass";
+            this.pass.Size = new System.Drawing.Size(590, 20);
+            this.pass.TabIndex = 0;
             // 
-            // textBox2
+            // hash
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 177);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(590, 20);
-            this.textBox2.TabIndex = 1;
+            this.hash.Location = new System.Drawing.Point(108, 177);
+            this.hash.Name = "hash";
+            this.hash.Size = new System.Drawing.Size(590, 20);
+            this.hash.TabIndex = 1;
             // 
-            // textBox3
+            // collision
             // 
-            this.textBox3.Location = new System.Drawing.Point(108, 291);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(136, 20);
-            this.textBox3.TabIndex = 2;
+            this.collision.Location = new System.Drawing.Point(108, 291);
+            this.collision.Name = "collision";
+            this.collision.Size = new System.Drawing.Size(136, 20);
+            this.collision.TabIndex = 2;
             // 
-            // textBox4
+            // length
             // 
-            this.textBox4.Location = new System.Drawing.Point(502, 288);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(186, 20);
-            this.textBox4.TabIndex = 3;
+            this.length.Location = new System.Drawing.Point(502, 288);
+            this.length.Name = "length";
+            this.length.Size = new System.Drawing.Size(186, 20);
+            this.length.TabIndex = 3;
             // 
-            // textBox5
+            // count
             // 
-            this.textBox5.Location = new System.Drawing.Point(502, 356);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(186, 20);
-            this.textBox5.TabIndex = 4;
+            this.count.Location = new System.Drawing.Point(502, 356);
+            this.count.Name = "count";
+            this.count.Size = new System.Drawing.Size(186, 20);
+            this.count.TabIndex = 4;
             // 
             // Password
             // 
@@ -124,51 +126,56 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Count:";
             // 
-            // button1
+            // calculate
             // 
-            this.button1.Location = new System.Drawing.Point(889, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = true;
+            this.calculate.Location = new System.Drawing.Point(889, 86);
+            this.calculate.Name = "calculate";
+            this.calculate.Size = new System.Drawing.Size(145, 23);
+            this.calculate.TabIndex = 10;
+            this.calculate.Text = "Calculate";
+            this.calculate.UseVisualStyleBackColor = true;
+            this.calculate.Click += new System.EventHandler(this.calculate_Click);
             // 
-            // button2
+            // searchCollisions
             // 
-            this.button2.Location = new System.Drawing.Point(889, 134);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 22);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Search Collisions";
-            this.button2.UseVisualStyleBackColor = true;
+            this.searchCollisions.Enabled = false;
+            this.searchCollisions.Location = new System.Drawing.Point(889, 134);
+            this.searchCollisions.Name = "searchCollisions";
+            this.searchCollisions.Size = new System.Drawing.Size(145, 22);
+            this.searchCollisions.TabIndex = 11;
+            this.searchCollisions.Text = "Search Collisions";
+            this.searchCollisions.UseVisualStyleBackColor = true;
+            this.searchCollisions.Click += new System.EventHandler(this.searchCollisions_Click);
             // 
-            // button3
+            // abort
             // 
-            this.button3.Location = new System.Drawing.Point(889, 189);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 24);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Abort";
-            this.button3.UseVisualStyleBackColor = true;
+            this.abort.Enabled = false;
+            this.abort.Location = new System.Drawing.Point(889, 189);
+            this.abort.Name = "abort";
+            this.abort.Size = new System.Drawing.Size(144, 24);
+            this.abort.TabIndex = 12;
+            this.abort.Text = "Abort";
+            this.abort.UseVisualStyleBackColor = true;
+            this.abort.Click += new System.EventHandler(this.abort_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1102, 439);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.abort);
+            this.Controls.Add(this.searchCollisions);
+            this.Controls.Add(this.calculate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Password);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.count);
+            this.Controls.Add(this.length);
+            this.Controls.Add(this.collision);
+            this.Controls.Add(this.hash);
+            this.Controls.Add(this.pass);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -178,19 +185,22 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox pass;
+        private System.Windows.Forms.TextBox hash;
+        private System.Windows.Forms.TextBox collision;
+        private System.Windows.Forms.TextBox length;
+        private System.Windows.Forms.TextBox count;
         private System.Windows.Forms.Label Password;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button calculate;
+        private System.Windows.Forms.Button searchCollisions;
+        private System.Windows.Forms.Button abort;
+       
+
+      
     }
 }
 
