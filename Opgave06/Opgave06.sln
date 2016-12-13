@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Globals", "Globals\Globals.csproj", "{CCA9F096-C181-4BFE-BD72-70C742811836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicLayer", "LogicLayer\LogicLayer.csproj", "{2D6BA588-4AD3-4E45-B1A7-59F32426C989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{CB55117F-CA70-46F2-9BDF-3F9B4C298BEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaCollisionsGUIMain", "ShaCollisionsGUIMain\ShaCollisionsGUIMain.csproj", "{8F8FA767-0A3A-4B6F-A2FF-09D0AEBEB1EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCA9F096-C181-4BFE-BD72-70C742811836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA9F096-C181-4BFE-BD72-70C742811836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA9F096-C181-4BFE-BD72-70C742811836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA9F096-C181-4BFE-BD72-70C742811836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D6BA588-4AD3-4E45-B1A7-59F32426C989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D6BA588-4AD3-4E45-B1A7-59F32426C989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D6BA588-4AD3-4E45-B1A7-59F32426C989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D6BA588-4AD3-4E45-B1A7-59F32426C989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB55117F-CA70-46F2-9BDF-3F9B4C298BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB55117F-CA70-46F2-9BDF-3F9B4C298BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB55117F-CA70-46F2-9BDF-3F9B4C298BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB55117F-CA70-46F2-9BDF-3F9B4C298BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8FA767-0A3A-4B6F-A2FF-09D0AEBEB1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8FA767-0A3A-4B6F-A2FF-09D0AEBEB1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8FA767-0A3A-4B6F-A2FF-09D0AEBEB1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8FA767-0A3A-4B6F-A2FF-09D0AEBEB1EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
