@@ -66,9 +66,14 @@ namespace LogicLayer
 
         public void SearchNumbers(int maxCount, IProgress<ulong> progressChanged, IProgress<BigInteger> numberFound, IProgress<int> calculationFinished, CancellationToken cancelToken)
         {
-            while (!cancelToken.IsCancellationRequested)
+          int count = 0;
+          ulong number = 0;
+          while (!cancelToken.IsCancellationRequested)
             {
-                   
+               if(count != maxCount)
+                {
+                    AbortCalculations();
+                }
             }
         }
 

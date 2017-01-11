@@ -15,14 +15,10 @@ namespace PerfectNumbersGuiMain
     {
         private ILogic logic;
 
-        public MainForm()
-        {
-            InitializeComponent();
-        }
 
         public MainForm(ILogic logic)
         {
-            this.logic = logic;
+            this.logic = logic; InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
