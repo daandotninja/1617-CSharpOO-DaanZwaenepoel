@@ -30,7 +30,12 @@ namespace LogicLayer
 
         public void Calculate(CancellationToken token, IProgress<long> progress)
         {
-            throw new NotImplementedException();
+
+            if (token.IsCancellationRequested)
+            {
+
+               
+            }
         }
 
         public void Start()
