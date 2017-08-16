@@ -8,9 +8,16 @@ namespace LogicLayer
 {
     public class Dice : IDice
     {
+        private Random rand;
+        public Dice()
+        {
+           rand = new Random();
+
+        }
         public int SingleValue()
         {
-            throw new NotImplementedException();
+           
+            return rand.Next(6);
         }
     }
 }

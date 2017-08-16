@@ -22,7 +22,7 @@ namespace LogicLayer
         {
             get
             {
-                throw new NotImplementedException();
+                return Values;
             }
         }
 
