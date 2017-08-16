@@ -17,7 +17,7 @@ namespace LogicLayer
         public int SingleValue()
         {
            
-            return rand.Next(6);
+            return rand.Next(1 , 7);
         }
     }
 }
