@@ -10,6 +10,8 @@ namespace LogicLayer
     public class Logic : ILogic
     {
         private IDice dice;
+        private CancellationTokenSource cts;
+        private Task job;
 
         public Logic(IDice dice)
         {
@@ -33,12 +35,18 @@ namespace LogicLayer
 
         public void Start()
         {
-            throw new NotImplementedException();
+            var progress = new Progress<long>((result)=>{
+               ValuesChanged?.Invoke(result);
+           });
+            cts = new CancellationTokenSource();
+            job = Task.Run(() => { Calculate( cts.Token, progress); });
+
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            cts.Cancel();
+            
         }
     }
 }

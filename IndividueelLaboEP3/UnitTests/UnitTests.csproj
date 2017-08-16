@@ -55,6 +55,20 @@
     <Compile Include="UnitTest2.cs" />
     <Compile Include="UnitTest3.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Globals\Globals.csproj">
+      <Project>{a5b35b7f-6689-4dd7-978b-c71942ba5a5f}</Project>
+      <Name>Globals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicLayer\LogicLayer.csproj">
+      <Project>{3cc2bcd5-0cd6-4e1b-9cd8-dd54e85a40e0}</Project>
+      <Name>LogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RollTheDiceMain\RollTheDiceMain.csproj">
+      <Project>{034b494d-8e5f-43b6-9d60-f3255f1c0afb}</Project>
+      <Name>RollTheDiceMain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
