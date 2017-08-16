@@ -15,13 +15,10 @@ namespace RollTheDiceMain
     {
         private ILogic logic;
 
-        public MainForm()
-        {
-            InitializeComponent();
-        }
-
+       
         public MainForm(ILogic logic)
         {
+            InitializeComponent();
             this.logic = logic;
         }
     }
